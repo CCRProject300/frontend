@@ -1,0 +1,59 @@
+.charity-bucket-page {
+  .chartist-tooltip {
+    position: absolute;
+    opacity: 0;
+    min-width: 5em;
+    padding: 5px;
+    background: @midnight;
+    color: #fff;
+    font-size: 12px;
+    text-align: center;
+    pointer-events: none;
+    z-index: 1;
+    transition: opacity .2s linear;
+    border-radius: 3px;
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      margin-left: -2px;
+      border: 5px solid transparent;
+      border-top-color: @midnight;
+    }
+
+    &.tooltip-show {
+      opacity: 1;
+    }
+  }
+
+  .ct-label {
+    font-size: 12px;
+    color: @brand-primary;
+  }
+
+  .arrow {
+    position: absolute;
+    top: 50vh;
+    left: 0;
+    opacity: 0.6;
+    transition: opacity .25s linear;
+    margin-top: -108px;
+
+    &.next {
+      left: auto;
+      right: 0;
+    }
+    svg {
+      width: 31px;
+      height: 115px;
+      filter: drop-shadow( 0px 3px 2px hsla(0, 0%, 0%, 0.4) );
+    }
+    &:hover {
+      opacity: 1;
+    }
+  }
+}

@@ -1,0 +1,70 @@
+.podium {
+  height: 300px;
+  position: relative;
+}
+
+.podium-bars {
+  height: 300px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.podium-bar {
+  display: flex;
+  flex-direction:column;
+  align-items: stretch;
+  width: 100px;
+  margin: 0 5px;
+  justify-content: space-between;
+  &.silver {
+    height: 170px;
+    background-color: lightgray;
+    .podium-image {
+      border-color: lightgray;
+      background-color: lightgray;
+    }
+  }
+  &.gold {
+    height: 210px;
+    background-color: gold;
+    .podium-image {
+      border-color: gold;
+      background-color: gold;
+    }
+  }
+  &.bronze {
+    height: 130px;
+    background-color: darkorange;
+    .podium-image {
+      border-color: darkorange;
+      background-color: darkorange;
+    }
+  }
+}
+
+.podium-image {
+  height: 100px;
+  width: 100px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  margin-top: -50px;
+  border-width: 5px;
+  border-style: solid;
+}
+
+.podium-text {
+  text-align: center;
+  padding: 0 5px 10px;
+  .score {
+    font-weight: bold;
+  }
+  .name {
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+}

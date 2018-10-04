@@ -1,0 +1,27 @@
+.company-standings {
+  .nav-tabs {
+    border-bottom: @gray-light 1px solid;
+  }
+  .age-tabs li.active a {
+    background-color: @brand-success;
+    color: white;
+  }
+  .gender-tabs li.active a {
+    background-color: @brand-info;
+    color: white;
+  }
+  .ct-chart {
+    margin-left: -3rem;
+  }
+  .ct-bar {
+    stroke-width: 6rem;
+  }
+  .ct-series {
+    .ct-bar:first-child {
+      stroke: rgba(87, 200, 242, 0.4);
+    }
+    .ct-bar:last-child {
+      stroke: rgba(87, 200, 242, 0.8);
+    }
+  }
+}

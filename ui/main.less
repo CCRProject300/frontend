@@ -1,0 +1,340 @@
+@import "bootstrap/less/bootstrap";
+
+@import (less) "chartist/dist/chartist.css";
+@import (less) "tachyons-flexbox/css/tachyons-flexbox.min.css";
+@import "font-awesome/less/font-awesome";
+@fa-font-path: '/fonts/font-awesome';
+@import "components/popTart";
+@import "components/dashboard/leaderboard";
+@import "components/dashboard/company-standings";
+@import "components/dashboard/podium";
+@import "components/dashboard/no-data-panel";
+
+@import (less) "css/spacing.less";
+@import (less) "css/addtohomescreen.css";
+@import (less) "css/bs4-responsive-utils.css";
+@import (less) "css/react-toggle.css";
+
+@import "layouts/header";
+@import "pages/home";
+@import "pages/dashboard";
+@import "pages/faqs";
+@import "pages/getting-started";
+@import "pages/leagues";
+@import "pages/league-landing-page";
+@import "pages/company/league-add";
+@import "pages/company/transaction-logs";
+@import "pages/rewards/rewards";
+@import "pages/charity-bucket/charity-bucket";
+
+@yellow:          #f8d347;
+@red:             #ff6c60;
+@blue:            #57c8f2;
+@teal:            #6ccac9;
+@green:           #a9d86e;
+@midnight:        #2a3542;
+@midnight-light:  #35404d;
+@bg-gray:         #f1f2f7;
+@text-gray:       #333;
+@text-gray-light: #c6cad6;
+@white:           white;
+
+@gray-base:              #000;
+@gray-darker:            lighten(@gray-base, 13.5%); // #222
+@gray-dark:              @text-gray;
+@gray:                   #35404d;
+@gray-light:             #c6cad6;
+@gray-lighter:           @bg-gray;
+
+@brand-primary:         #009ee0;
+@brand-success:         @green;
+@brand-info:            #f0ad4e;
+@brand-warning:         @yellow;
+@brand-danger:          @red;
+
+@body-bg:               #5CCCF4;
+@text-color:            @gray-dark;
+
+@link-color:            @brand-primary;
+@link-hover-color:      darken(@link-color, 15%);
+@link-hover-decoration: underline;
+
+@font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+
+@navbar-default-color:  @white;
+@navbar-default-bg:     @brand-primary;
+@navbar-default-border: none;
+@nav-link-hover-bg:                          @body-bg;
+@nav-tabs-border-color:                      none;
+@nav-tabs-link-hover-border-color:           none;
+@nav-tabs-active-link-hover-bg:              @brand-primary;
+@nav-tabs-active-link-hover-color:           @gray;
+@nav-tabs-active-link-hover-border-color:    none;
+@nav-tabs-justified-link-border-color:       none;
+@nav-tabs-justified-active-link-border-color:@brand-primary;
+
+// Atoms
+.bg-gray-lighter {
+  background-color:@gray-lighter !important;
+}
+.bg-gray-light {
+  background-color: @gray-light !important;
+}
+.bg-primary {
+  background-color:@brand-primary !important;
+}
+.bg-info {
+  background-color: @brand-info !important;
+}
+.bg-yellow {
+  background-color: @yellow !important;
+}
+.bg-teal {
+  background-color: @teal !important;
+}
+.bg-red {
+  background-color: @red !important;
+}
+.bg-blue {
+  background-color: @blue !important;
+}
+.primary {
+  color: @brand-primary !important;
+}
+.white {
+  color: @white !important;
+}
+.gray-dark {
+  color: @gray-dark !important;
+}
+.gray-light {
+  color: @text-gray-light !important;
+}
+.opacity-50 {
+  opacity: 0.5;
+}
+.display-ib {
+  display:inline-block;
+}
+.display-t {
+  width:100%;
+  display:table;
+}
+.display-tc {
+  display:table-cell;
+}
+.position-a {
+  position: absolute;
+}
+.position-r {
+  position: relative;
+}
+.position-ib {
+  position: inline-block;
+}
+.l-1 {
+  left: 1rem;
+}
+.r-1 {
+  right: 1rem;
+}
+.v-top {
+  vertical-align: top;
+}
+.v-mid {
+  vertical-align: middle;
+}
+.v-bot {
+  vertical-align: bottom;
+}
+.w-100 {
+  width:100%;
+}
+.w-50 {
+  width: 50%
+}
+.w-40 {
+  width: 40%
+}
+.w-60 {
+  width: 60%
+}
+.m-x-n-1 {
+  margin-left: -1rem !important;
+  margin-right: -1rem !important;
+}
+.max-width-800 {
+  max-width:800px;
+}
+.border-white {
+  border-color: @white !important;
+}
+.font-xl {
+  font-size:50px;
+}
+.line-height-1 {
+  line-height:1;
+}
+.truncate {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.table-fixed {
+  table-layout:fixed;
+}
+.label-tag {
+  margin: 0 6px 6px 0;
+  display: inline-block;
+  white-space: pre-wrap;
+  cursor: pointer;
+  userSelect: none;
+}
+
+@media (min-width: @screen-sm) {
+  .pull-sm-right {
+    float: right;
+  }
+}
+
+// ---- Boostrap overrides and extensions --------------------------------------
+a, .btn {
+  transition: all 0.1s ease-in-out;
+}
+.btn-outline {
+  background-color: transparent;
+  color: inherit;
+  transition: all .5s;
+}
+.btn-primary.btn-outline {
+  color: @brand-primary;
+}
+.btn-primary.btn-outline:hover {
+  color: white;
+}
+.nav-dark {
+  a {
+    color: lighten(@gray-light, 20%);
+  }
+  a:hover, a:focus {
+    color: @white;
+  }
+  > li > a.active,
+  > li > a:hover,
+  > li > a:focus {
+    color: @white;
+    background-color: @midnight-light;
+    i {
+      color: @brand-primary;
+    }
+  }
+  // add background from parent on nested navs
+  .nav-dark {
+    background-color: @midnight-light;
+  }
+}
+.nav-stacked > li + li {
+  margin-top: 4px;
+}
+.navbar-btn {
+  border-color: @white;
+  background-color: @brand-primary;
+  color: @white;
+}
+.navbar-btn:hover,
+.open.dropdown .navbar-btn {
+  background-color: @white;
+  color: @brand-primary;
+}
+.popover-title-bg-yellow {
+  .popover-title {
+    background-color :@yellow !important;
+  }
+}
+.popover-title-bg-green {
+  .popover-title {
+    background-color: @green !important;
+  }
+}
+.popover-title-bg-red {
+  .popover-title {
+    background-color: @red !important;
+  }
+}
+
+// -----Push modal below header bar
+.modal-dialog {
+  margin-top: 85px;
+}
+
+// ---- Bespoke layout ---------------------------------------------------------
+html, body  {
+  height: 100%;
+}
+#main-content {
+  // account for fixed navbar
+  margin-top: 51px;
+}
+#sidebar, #main-content {
+  box-sizing: border-box;
+  display: block;
+  transition: transform 0.2s ease-in-out;
+}
+#sidebar {
+  height: 100vh;
+  position:fixed;
+  padding-top:66px;
+  top:0;
+  left:0;
+  bottom:0;
+  z-index:1000;
+  width: 210px;
+  background-color: @midnight;
+  a {
+    font-size:90%;
+  }
+}
+#main-content {
+  position: relative;
+  min-height: ~'calc(100vh - 51px)';
+  transform: translateX(210px);
+  overflow-y: hidden;
+}
+#footer {
+  position:absolute;
+  bottom:0;
+  width:100%;
+}
+@media (min-width: @screen-sm) {
+  .show-sidebar #main-content,
+  .show-sidebar #footer {
+    padding-right:225px !important;
+  }
+}
+.hide-sidebar {
+  #sidebar {
+    transform: translateX(-210px);
+  }
+  #main-content {
+    transform: translateX(0px);
+  }
+}
+.notification + .notificaiton {
+  border-top: solid 1px @gray-light;
+}
+.pointer {
+  cursor: pointer;
+
+  .only-hover {
+    visibility: hidden;
+  }
+
+  &:hover {
+    opacity: 0.6;
+
+    .only-hover {
+      visibility: visible;
+    }
+  }
+}

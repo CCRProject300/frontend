@@ -1,0 +1,15 @@
+.faqs {
+  padding-bottom: 9rem;
+  h1 { font-size: 3rem; }
+  h2 { font-size: 2rem; }
+  h2[id]:before {// compensates for header when navigating anchors
+    content: '';
+    display: block;
+    height: 8rem;
+    margin-top: -8rem;
+  }
+  a {
+    position: relative;
+    z-index: 100;
+  }
+}

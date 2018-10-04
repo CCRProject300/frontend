@@ -1,0 +1,156 @@
+{
+  "name": "kudoshealth-frontend",
+  "version": "11.0.2",
+  "description": "KudosHealth frontend",
+  "author": {
+    "name": "Alan J (alanj1998), David M (dvdmlgn), Darran M (darranmullen) in collaboration with TABLEFLIP",
+    "email": "hello@tableflip.io",
+    "linkedIn": [
+      "https://linkedin.com/in/alan-jachimczak-212697166/",
+      "https://www.linkedin.com/in/darranmullen/",
+      "https://www.linkedin.com/in/david-mulligan-0a8030114"
+    ],
+    "url": "https://tableflip.io/"
+  },
+  "homepage": "https://www.kudoshealth.com/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tableflip/kudoshealth-frontend.git"
+  },
+  "engines": {
+    "node": "^10.8.0",
+    "npm": "^6.2.0"
+  },
+  "dependencies": {
+    "async": "^2.6.1",
+    "auth0-js": "^9.7.3",
+    "babel-cli": "^6.24.1",
+    "babel-polyfill": "^6.13.0",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-react": "^6.5.0",
+    "babel-preset-stage-2": "^6.5.0",
+    "babelify": "^7.3.0",
+    "boom": "^4.0.0",
+    "bootstrap": "^3.3.6",
+    "browserify": "^13.0.1",
+    "chartist": "^0.10.1",
+    "chroma-js": "^1.3.7",
+    "compression": "^1.7.3",
+    "config": "^1.31.0",
+    "cssnano": "^3.6.2",
+    "express": "^4.16.3",
+    "fitbit-node": "^2.1.0",
+    "font-awesome": "^4.6.3",
+    "googleapis": "^15.0.0",
+    "history": "^3.3.0",
+    "isomorphic-fetch": "^2.2.1",
+    "joi": "^9.0.0-3",
+    "joi-browser": "^8.4.0",
+    "jwt-decode": "^2.0.1",
+    "less": "^2.7.3",
+    "lodash.debounce": "^4.0.6",
+    "lodash.merge": "^4.6.1",
+    "lodash.omit": "^4.3.0",
+    "lodash.pick": "^4.2.1",
+    "lodash.round": "^4.0.2",
+    "moment": "^2.22.2",
+    "moment-timezone": "^0.4.0",
+    "morgan": "~1.0.0",
+    "object-path": "^0.11.4",
+    "passport": "~0.1.17",
+    "passport-fitbit-oauth2": "^1.0.1",
+    "passport-google-oauth20": "^1.0.0",
+    "passport-runkeeper": "^0.1.2",
+    "passport-strava": "^0.1.0",
+    "postcss-cli": "^2.5.2",
+    "prop-types": "^15.6.2",
+    "react": "^15.6.2",
+    "react-addons-shallow-compare": "^15.6.2",
+    "react-bootstrap": "^0.30.7",
+    "react-bootstrap-date-picker": "^3.1.0",
+    "react-chartist": "^0.13.1",
+    "react-dom": "^15.6.2",
+    "react-helmet": "^3.1.0",
+    "react-notification-system": "^0.2.17",
+    "react-redux": "^4.4.9",
+    "react-router": "^3.2.1",
+    "react-router-redux": "^4.0.4",
+    "react-router-scroll": "^0.4.4",
+    "react-toggle": "^2.1.1",
+    "redux": "^3.5.2",
+    "redux-thunk": "^2.3.0",
+    "simple-format-number": "^0.1.2",
+    "tachyons-flexbox": "^2.1.0",
+    "uglify-js": "^2.6.2",
+    "xhr2": "^0.1.3"
+  },
+  "devDependencies": {
+    "@kadira/storybook": "^2.21.0",
+    "babel-eslint": "^6.1.2",
+    "babel-tape-runner": "^2.0.1",
+    "faker": "^3.1.0",
+    "faucet": "0.0.1",
+    "nodemon": "^1.18.3",
+    "npm-run-all": "^2.1.1",
+    "pre-commit": "^1.1.3",
+    "redux-mock-store": "^1.5.3",
+    "sinon": "^1.17.6",
+    "standard": "^7.1.2",
+    "tape": "^4.9.1",
+    "watchify": "^3.11.0"
+  },
+  "bundleDependencies": [],
+  "private": true,
+  "main": "server.js",
+  "scripts": {
+    "postinstall": "run-s build minify",
+    "start": "babel-node index.jsx",
+    "test": "run-s test:*",
+    "test:lint": "standard",
+    "test:unit": "NODE_ENV=test babel-tape-runner tests/*.js | faucet",
+    "build": "run-p build:*",
+    "build:js": "browserify ./client.jsx -o public/bundle.js",
+    "build:css": "lessc --include-path=node_modules ui/main.less public/bundle.css",
+    "build:copy": "mkdir -p public/fonts/font-awesome && rsync -a node_modules/font-awesome/fonts/* public/fonts/font-awesome",
+    "minify": "run-p minify:*",
+    "minify:js": "uglifyjs public/bundle.js -o public/bundle.js",
+    "minify:css": "postcss -u cssnano -i public/bundle.css -o public/bundle.css",
+    "watch": "npm-run-all build --parallel watch:*",
+    "watch:js": "watchify ./client.jsx -o public/bundle.js -v",
+    "watch:css": "nodemon -e css,less --ignore public/bundle.css -x 'npm run build:css'",
+    "watch:server": "nodemon --watch . --ignore node_modules/ --ignore public/ -e js,jsx,json -x 'npm start'",
+    "storybook": "start-storybook -p 6006 -s ./public",
+    "build-storybook": "build-storybook"
+  },
+  "browser": {
+    "joi": "joi-browser"
+  },
+  "browserify": {
+    "transform": [
+      [
+        "babelify",
+        {
+          "presets": [
+            "es2015",
+            "stage-2",
+            "react"
+          ]
+        }
+      ]
+    ]
+  },
+  "babel": {
+    "presets": [
+      "es2015",
+      "stage-2",
+      "react"
+    ]
+  },
+  "standard": {
+    "parser": "babel-eslint",
+    "globals": [
+      "$",
+      "Chartist"
+    ]
+  }
+}

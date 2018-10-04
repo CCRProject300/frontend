@@ -1,0 +1,54 @@
+.coin {
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  width: 25px;
+  height: 25px;
+  border: 4px double #764016;
+  border-radius: 50%;
+  background-color: #F7D80E;
+}
+.coin-white {
+  border-color: #FFF;
+}
+.coin::before {
+  content: 'K';
+  display: block;
+  font-size: 12px;
+  font-family: Helvetica;
+  line-height: 19px;
+  color: #764016;
+  text-align: center;
+}
+.coin-white::before {
+  color: #FFF;
+}
+.coin-lg {
+  width: 50px;
+  height: 50px;
+  border-width: 8px;
+}
+.coin-lg::before {
+  font-size: 20px;
+  line-height: 36px;
+}
+.coin-xl {
+  width: 80px;
+  height: 80px;
+  border-width: 11px;
+}
+.coin-xl::before {
+  font-size: 35px;
+  line-height: 58px;
+}
+
+.rewards-page {
+  .bucket, .bucket:hover {
+    text-decoration: none;
+    color: @gray;
+  }
+
+  .bucket .panel:hover {
+    border-color: @blue;
+  }
+}

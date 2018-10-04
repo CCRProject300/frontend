@@ -1,0 +1,35 @@
+{
+  "port": 3000,
+  "public": {
+    "apiUrl": "http://localhost:4000",
+    "uploadcarePublicKey": "",
+    "dateFormat": "D MMM YYYY",
+    "googleAnalyticsToken": "",
+    "auth0": {
+      "clientId": "",
+      "domain": "",
+      "connection": "",
+      "callbackURL": ""
+    }
+  },
+  "fitbit": {
+    "clientId": "test",
+    "clientSecret": "test",
+    "callbackUrl": "http://localhost:3000/connect/fitbit/callback"
+  },
+  "google-fit": {
+    "clientId": "test",
+    "clientSecret": "test",
+    "callbackUrl": "http://localhost:3000/connect/google-fit/callback"
+  },
+  "runkeeper": {
+    "clientId": "test",
+    "clientSecret": "test",
+    "callbackUrl": "http://localhost:3000/connect/runkeeper/callback"
+  },
+  "strava": {
+    "clientId": "test",
+    "clientSecret": "test",
+    "callbackUrl": "http://localhost:3000/connect/strava/callback"
+  }
+}

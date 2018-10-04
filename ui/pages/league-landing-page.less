@@ -1,0 +1,149 @@
+.league-landing-page {
+  .hero-image {
+    display: block;
+    position: static;
+    min-height: calc(~"100vh - 60px");
+    flex-direction: column;
+    align-items: stretch;
+    top: 0;
+    bottom: 60px;
+    left: 0;
+    right: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    @media (min-width: @screen-sm) {
+      display: flex;
+      position: absolute;
+      min-height: initial;
+    }
+  }
+
+  .main-flex {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    flex-grow: 1;
+    flex-wrap: wrap;
+    @media (min-width: @screen-md) {
+      flex-wrap: nowrap
+    }   
+  }
+
+  .overlay {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: url('/imgs/landing-page-triangle.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+  }
+
+  .text-content {
+    z-index: 1;
+    text-align: left;
+    color: white;
+    font-size: 18px;
+    width: 36em;
+    line-height: 1.5;
+    max-width: 100%;
+    padding: 25px;
+    background-color: rgba(0, 0, 0, 0.5);
+
+    @media (min-width: @screen-md) {
+      background-color: initial;
+    }
+
+    @media (min-width: @screen-xs) {
+      text-align: right;
+    }
+  }
+
+  .title {
+    font-size: 32px;
+    margin-bottom: 16px;
+  }
+
+  .logo {
+    padding: 25px;
+    width: 250px;
+    flex-shrink: 1;
+    max-width: 50%;
+
+    > img {
+      width: 100%;
+    }
+  }
+
+  .logo-bar {
+    position: relative;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 2;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    @media (min-width: @screen-sm) {
+      position: absolute;
+    }
+  }
+
+  .bottom-bar {
+    position: static;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background-color: white;
+    > span {
+      display: flex;
+    }
+
+    @media (min-width: @screen-sm) {
+      position: absolute;
+    }    
+  }
+
+  .join-button {
+    z-index: 1;
+    align-self: flex-end;
+    width: 100%;
+    text-align: center;
+    margin: 50px;
+    .btn {
+      font-size: 24px;
+      padding: 10px 15px;
+    }
+
+    @media (min-width: @screen-lg) {
+      margin: 8% 10%;
+    }
+    @media (min-width: @screen-xs) {
+      width: auto;
+      text-align: initial;
+    }
+  }
+
+  .app-logo {
+    height: 40px;
+    margin-right: 25px
+  }
+
+}
+
+.join-league-modal-background {
+  background-color: @body-bg;
+}

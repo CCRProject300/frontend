@@ -1,0 +1,12 @@
+{
+  "port": 3030,
+  "public": {
+    "apiUrl": "http://localhost:4040",
+    "auth0": {
+      "clientId": "TEST",
+      "domain": "localhost:4050",
+      "connection": "TEST",
+      "callbackURL": "http://localhost:3030/auth0/callback"
+    }
+  }
+}
