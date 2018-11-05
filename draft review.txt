@@ -1,0 +1,49 @@
+Ryan McKelvey
+Group 7
+##############################################################################################
+Group 5
+{
+--Project idea.
+Idea is solid and definitely has the potential to be a great project. However after researching yummly api it seems rather pricey? Unless 
+you are going to use various other emails to keep refreshing your api's free 14 day trial.
+
+--User Interface
+Your UI is very well designed and thought out. Maybe instead of having nothing else in the login page perhaps you could have a few recipes 
+but with limited information on them and this would intrigue people to click on them and then redirect them to a login screen.
+
+--Component Tree Diagram
+Component Tree Diagram is very good with no real visible flaws in my opinion.
+
+--Architecture Diagram
+Architecture diagram is well laid out and paints a clear picture of the exchange of information
+in the project.
+
+--Database Diagram
+Very well laid out database diagram with no real complaints on my end.
+}
+##############################################################################################
+Group 6
+{
+--Project Idea
+Idea is good, would registered users have to pay the monthly fee or could registered users just opt into paying the fee by subscribing?
+Personally I wouldn't want to pay just to join a website especially if I would have to just pay again when attending training sessions.
+The perks of registering too don't really outweigh the fact you'd have to pay, I'd be spending money to get notifications about the 
+option to spend more money. Gallery is a good idea as it will allow users to see more about what they're getting into. Maybe add 
+functionality for an admin to create events for members only and have the members sign up for the event through the website?
+
+--User Interface
+User interface is okay apart from a few allignment issues, maybe put the class times in a seperated secgtion so they are easier to see?
+Also the buttons for "sign up" and "join" do they preform seperate functions?
+
+--Component Tree Diagram
+Diagram contains far too much information, it's only meant to contain components and how they are laid out. You have that done here, but
+got carried away a bit, for instance Product name, price, image and description are properties of the Product component not individual 
+components
+
+--Architecture Diagram
+Architecture diagram is well done, maybe however instead of the website being hosted on the virtual desktops at the it you could host it
+on the google cloud? Also is there any api's you are going to be using that are pre-existing or are you making your own.
+
+--Database Diagram
+Database diagram is well laid out and displays information on the data used in the project adequately.
+}
